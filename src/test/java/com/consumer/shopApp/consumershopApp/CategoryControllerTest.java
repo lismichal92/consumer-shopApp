@@ -24,7 +24,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(webEnvironment = WebEnvironment.MOCK)
 @AutoConfigureMockMvc
 @AutoConfigureJsonTesters
-@AutoConfigureStubRunner(workOffline = true, ids = "com.example:ShopApp")
+//tutaj inaczej???????????????????????  @AutoConfigureStubRunner(workOffline = true , ids = "com.example:shopApp")
+@AutoConfigureStubRunner(workOffline = true)
 @DirtiesContext
 public class CategoryControllerTest {
 	
@@ -38,7 +39,7 @@ public class CategoryControllerTest {
 		mockMvc.perform(MockMvcRequestBuilders.get("/categoryApi/countProductsOfCategory/1").
 				accept(new MediaType("application", "json")))
 				.andExpect(status().isOk())
-				.andExpect(content().json("{\"categoryName\":\"testCategory\",\"categoryId\":1,\"productCount\":1}"));
+				.andExpect(content().json("{\"categoryName\":\"Motoryzacja\",\"categoryId\":1,\"productCount\":7}"));
 	}
 	
 

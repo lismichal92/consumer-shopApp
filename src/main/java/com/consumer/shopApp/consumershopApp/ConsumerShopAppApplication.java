@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-@EnableBinding(Sink.class)
+//@EnableBinding(Sink.class)
 public class ConsumerShopAppApplication {
 
 	public static void main(String[] args) {

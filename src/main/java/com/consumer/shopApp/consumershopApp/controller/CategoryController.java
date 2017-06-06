@@ -1,6 +1,9 @@
 package com.consumer.shopApp.consumershopApp.controller;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
 import java.net.URI;
+import java.net.URL;
 
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
@@ -25,7 +28,7 @@ public class CategoryController {
 
 	private final RestTemplate restTemplate;
 
-	int port = 8090;
+	final int port = 8080;
 
 	@RequestMapping(value = "/getCategoryById/{id}",
 			method = RequestMethod.GET, 
@@ -33,13 +36,13 @@ public class CategoryController {
 	public ResponseEntity<Response_countProdoFCat> getCategoryById(@PathVariable("id") int id) {
 	
 		RequestEntity re = new RequestEntity<Response_countProdoFCat>
-		(HttpMethod.GET,URI.create("http://localhost:" + port + "/countProductsOfCategory/" + id));
-		
+		(HttpMethod.GET,URI.create("http://localhost:" + port + "/category/countProductsOfCategory/" + id));
 		
 		ResponseEntity<Response_countProdoFCat> response = this.restTemplate
 				.exchange(re,Response_countProdoFCat.class);
 		return response;
 
 	}
+	
 
 }
