@@ -25,7 +25,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 @AutoConfigureJsonTesters
 //tutaj inaczej???????????????????????  @AutoConfigureStubRunner(workOffline = true , ids = "com.example:shopApp")
-@AutoConfigureStubRunner(workOffline = true)
+@AutoConfigureStubRunner(workOffline = false)
 @DirtiesContext
 public class CategoryControllerTest {
 	
